@@ -35,6 +35,7 @@ public class DumpDatabase {
     }
 
     public Optional<Boolean> execute() {
+        System.out.println("Running dump-db.");
         if (Objects.isNull(path))
             return deserializer.deserialize()
                     .flatMap(result -> writeDatabase(result.contents(), result.seperator()));
@@ -50,6 +51,7 @@ public class DumpDatabase {
 
     private Optional<Boolean> writeDatabase(final String contents, final String seperator) {
         databaseContext.fill(lines(contents, seperator));
+        System.out.println("dump-db finished.");
         return Optional.of(true);
     }
 

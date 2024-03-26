@@ -20,10 +20,13 @@ public class Shred {
     }
 
     public Optional<Boolean> execute() {
-        return context.readResource(Path.of(SOURCE_FILE_LOCATION))
-                .flatMap(result -> validate(path).map(path -> new PathAndContents(path, result)))
+        System.out.println("Running shred.");
+        var result = context.readResource(Path.of(SOURCE_FILE_LOCATION))
+                .flatMap(source -> validate(path).map(path -> new PathAndContents(path, source)))
                 .flatMap(this::overwrite)
                 .flatMap(this::delete);
+        System.out.println("shred finished.");
+        return result;
     }
 
     private Optional<Path> validate(final Path path) {
@@ -33,14 +36,25 @@ public class Shred {
 
     private Optional<PathAndContents> overwrite(final PathAndContents result) {
         var check = true;
-        for (int i = 0; i < NUMBER_OF_OVERWRITES && check; i++)
+        for (int i = 0; i < NUMBER_OF_OVERWRITES && check; i++) { // I really dislike writing loops with curly braces
+            System.out.printf("%s Overwriting.%n", i + 1);
             check = context.write(path, result.contents());
-        return check ? Optional.of(result) : Optional.empty();
+        }
+        return check(result, check);
+    }
+
+    private Optional<PathAndContents> check(final PathAndContents result, final Boolean check) {
+        if (check) return Optional.of(result);
+        else {
+            System.err.println("Overwrite failed.");
+            return Optional.empty();
+        }
     }
 
     private Optional<Boolean> delete(final PathAndContents result) {
         return Optional.of(context.delete(result.path()));
     }
 
-    private record PathAndContents(Path path, String contents) { }
+    private record PathAndContents(Path path, String contents) {
+    }
 }

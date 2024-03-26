@@ -27,10 +27,13 @@ public class FillData {
     }
 
     public Optional<Boolean> execute() {
-        return context.readResource(Path.of(SOURCE_FILE_LOCATION))
+        System.out.println("Running fill-data.");
+        var result = context.readResource(Path.of(SOURCE_FILE_LOCATION))
                 .flatMap(this::validate)
                 .flatMap(source -> write(path, source))
-                .flatMap(result -> serializer.serialize(new ApplicationContext(result, seperator)));
+                .flatMap(contents -> serializer.serialize(new ApplicationContext(contents, seperator)));
+        System.out.println("fill-data finished.");
+        return result;
     }
 
     private Optional<String> validate(final String contents) {
