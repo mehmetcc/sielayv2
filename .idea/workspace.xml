@@ -4,30 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="Add shred and tests">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/Root.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/ShredCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/command/Shred.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/io/FileContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/nasreddin_hodja.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/queen-of-hearts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/mehmetcc/command/ShredTest.java" afterDir="false" />
+    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="Formatting">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/FillData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/MiddlewareConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/FillDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/Root.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/RootCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/ShredCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/ShredCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/command/Shred.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/Shred.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/queen-of-hearts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/queen_of_hearts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/mehmetcc/command/ShredTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/ShredTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,10 +90,10 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.mehmetcc.Main" />
       <module name="sielayv2.main" />
-      <option name="PROGRAM_PARAMETERS" value="shred see" />
+      <option name="PROGRAM_PARAMETERS" value="fill-data mikimiki2 -S ;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.mehmetcc.*" />
@@ -126,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShredTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FillDataTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +127,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.command.ShredTest&quot;" />
+            <option value="&quot;org.mehmetcc.middleware.FillDataTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -149,7 +137,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ShredTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FillDataTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,7 +150,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.cli.ShredTest&quot;" />
+            <option value="&quot;org.mehmetcc.command.FillDataTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,7 +160,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ShredTest.whenContextIsAbleToReadSourceFileAndFileToBeShredded_thenVerifyOverwritingActionHappenedThreeTimesAndFileIsDeleted" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FillDataTest.whenContextIsAbleToReadFromResources_shouldWriteToNewFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -185,7 +173,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.command.ShredTest.whenContextIsAbleToReadSourceFileAndFileToBeShredded_thenVerifyOverwritingActionHappenedThreeTimesAndFileIsDeleted&quot;" />
+            <option value="&quot;org.mehmetcc.command.FillDataTest.whenContextIsAbleToReadFromResources_shouldWriteToNewFile&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,7 +183,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ShredTest.whenTargetFileCantBeDeleted_thenReturnFalse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FillDataTest.whenWriteOperationFails_shouldReturnEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -208,7 +196,28 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.command.ShredTest.whenTargetFileCantBeDeleted_thenReturnFalse&quot;" />
+            <option value="&quot;org.mehmetcc.command.FillDataTest.whenWriteOperationFails_shouldReturnEmpty&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'sielayv2.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -220,18 +229,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.ShredTest (1)" />
-      <item itemvalue="Gradle.ShredTest.whenTargetFileCantBeDeleted_thenReturnFalse" />
-      <item itemvalue="Gradle.ShredTest" />
-      <item itemvalue="Gradle.ShredTest.whenContextIsAbleToReadSourceFileAndFileToBeShredded_thenVerifyOverwritingActionHappenedThreeTimesAndFileIsDeleted" />
+      <item itemvalue="Gradle.FillDataTest" />
+      <item itemvalue="Gradle.FillDataTest (1)" />
+      <item itemvalue="Gradle.FillDataTest.whenContextIsAbleToReadFromResources_shouldWriteToNewFile" />
+      <item itemvalue="Gradle.FillDataTest.whenWriteOperationFails_shouldReturnEmpty" />
+      <item itemvalue="Gradle.Tests in 'sielayv2.test'" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ShredTest (1)" />
-        <item itemvalue="Gradle.ShredTest.whenTargetFileCantBeDeleted_thenReturnFalse" />
-        <item itemvalue="Gradle.ShredTest.whenContextIsAbleToReadSourceFileAndFileToBeShredded_thenVerifyOverwritingActionHappenedThreeTimesAndFileIsDeleted" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.ShredTest" />
+        <item itemvalue="Gradle.FillDataTest (1)" />
+        <item itemvalue="Gradle.Tests in 'sielayv2.test'" />
+        <item itemvalue="Gradle.FillDataTest" />
+        <item itemvalue="Gradle.FillDataTest.whenWriteOperationFails_shouldReturnEmpty" />
+        <item itemvalue="Gradle.FillDataTest.whenContextIsAbleToReadFromResources_shouldWriteToNewFile" />
       </list>
     </recent_temporary>
   </component>
@@ -244,13 +254,30 @@
       <option name="presentableId" value="Default" />
       <updated>1711291116718</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add shred and tests">
+      <created>1711463750725</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711463750725</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Formatting">
+      <created>1711463801039</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711463801039</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add shred and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add shred and tests" />
+    <MESSAGE value="Formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sielayv2$Tests_in__sielayv2_test_.ic" NAME="Tests in 'sielayv2.test' Coverage Results" MODIFIED="1711466684203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sielayv2$ShredTest.ic" NAME="ShredTest Coverage Results" MODIFIED="1711457562173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

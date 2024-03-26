@@ -1,4 +1,4 @@
-package org.mehmetcc.command;
+package org.mehmetcc.middleware;
 
 import org.mehmetcc.io.FileContext;
 
@@ -34,14 +34,13 @@ public class Shred {
     private Optional<PathAndContents> overwrite(final PathAndContents result) {
         var check = true;
         for (int i = 0; i < NUMBER_OF_OVERWRITES && check; i++)
-            check = context.write(path, result.contents);
+            check = context.write(path, result.contents());
         return check ? Optional.of(result) : Optional.empty();
     }
 
     private Optional<Boolean> delete(final PathAndContents result) {
-        return Optional.of(context.delete(result.path));
+        return Optional.of(context.delete(result.path()));
     }
 
-    private record PathAndContents(Path path, String contents) {
-    }
+    private record PathAndContents(Path path, String contents) { }
 }

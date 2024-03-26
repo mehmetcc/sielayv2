@@ -1,4 +1,4 @@
-package org.mehmetcc.command;
+package org.mehmetcc.middleware;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

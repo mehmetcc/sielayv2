@@ -1,6 +1,6 @@
 package org.mehmetcc.cli;
 
-import org.mehmetcc.command.Shred;
+import org.mehmetcc.middleware.Shred;
 import org.mehmetcc.io.FileContext;
 import picocli.CommandLine;
 
