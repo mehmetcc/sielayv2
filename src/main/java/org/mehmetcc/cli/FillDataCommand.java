@@ -10,7 +10,9 @@ import java.nio.file.Path;
 
 @CommandLine.Command(name = "fill-data", description = "Fill given path with predetermined data.", mixinStandardHelpOptions = true)
 public class FillDataCommand implements Runnable {
-    @CommandLine.Parameters(index = "0", description = "Target file.")
+    @CommandLine.Parameters(index = "0",
+            arity = "1",
+            description = "Target file.")
     private Path path;
 
     @CommandLine.Option(names = {"-S", "--seperator"},

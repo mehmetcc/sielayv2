@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add dump-db">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add shadowjar">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,11 +103,11 @@
       <command value="gradle shadowJar" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.sielayv2 [shadowJar]">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.mehmetcc.Main" />
       <module name="sielayv2.main" />
-      <option name="PROGRAM_PARAMETERS" value="dump-db" />
+      <option name="PROGRAM_PARAMETERS" value="fill-data" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.mehmetcc.*" />
@@ -354,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711477270746</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add shadowjar">
+      <created>1711478174417</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711478174417</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -367,7 +373,8 @@
     <MESSAGE value="fix grammar" />
     <MESSAGE value="add 10 lines validation" />
     <MESSAGE value="add dump-db" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dump-db" />
+    <MESSAGE value="add shadowjar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add shadowjar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
