@@ -11,10 +11,15 @@ import java.nio.file.Path;
 
 @CommandLine.Command(name = "dump-db", description = "Dump binary data to an sqlite database.", mixinStandardHelpOptions = true)
 public class DumpDatabaseCommand implements Runnable {
-    @CommandLine.Parameters(index = "0", defaultValue = CommandLine.Parameters.NULL_VALUE)
+    @CommandLine.Parameters(
+            description = "Source file.",
+            arity = "0..1")
     private Path path;
 
-    @CommandLine.Option(names = {"-S", "--seperator"}, description = "Seperator to split the file.", defaultValue = MiddlewareConstants.DEFAULT_SEPERATOR)
+    @CommandLine.Option(names = {"-S", "--seperator"},
+            description = "Seperator to split the file.",
+            defaultValue = MiddlewareConstants.DEFAULT_SEPERATOR,
+            showDefaultValue = CommandLine.Help.Visibility.ALWAYS)
     private String seperator;
 
     @Override

@@ -30,7 +30,7 @@ public class FillData {
         return context.readResource(Path.of(SOURCE_FILE_LOCATION))
                 .flatMap(this::validate)
                 .flatMap(source -> write(path, source))
-                .flatMap(this::serialize);
+                .flatMap(result -> serializer.serialize(new ApplicationContext(result, seperator)));
     }
 
     private Optional<String> validate(final String contents) {
@@ -40,11 +40,6 @@ public class FillData {
         }
 
         return Optional.of(contents);
-    }
-
-    private Optional<Boolean> serialize(final String contents) {
-        serializer.serialize(new ApplicationContext(contents, seperator));
-        return Optional.of(true);
     }
 
     private Optional<String> write(final Path path, final String contents) {

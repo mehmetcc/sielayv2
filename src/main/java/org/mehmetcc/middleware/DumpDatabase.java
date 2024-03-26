@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.regex.PatternSyntaxException;
 
 public class DumpDatabase {
     private final FileContext fileContext;
@@ -53,8 +54,13 @@ public class DumpDatabase {
     }
 
     private List<String> lines(final String contents, final String seperator) {
-        return Arrays.asList(contents
-                .replaceAll("\n", "")
-                .split(seperator));
+        try {
+            return Arrays.asList(contents
+                    .replaceAll("\n", "")
+                    .split(seperator));
+        } catch (PatternSyntaxException e) {
+            System.err.println("Invalid escape character. Use a different seperator in the future.");
+            return List.of(contents);
+        }
     }
 }
