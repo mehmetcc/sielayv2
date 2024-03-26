@@ -1,5 +1,7 @@
 package org.mehmetcc.middleware;
 
+import org.mehmetcc.context.ApplicationContext;
+import org.mehmetcc.context.ApplicationContextSerializer;
 import org.mehmetcc.io.FileContext;
 
 import java.nio.file.Path;
@@ -13,21 +15,33 @@ public class FillData {
 
     private final FileContext context;
 
+    private final ApplicationContextSerializer serializer;
+
     private final String seperator;
 
-    public FillData(final Path path, final FileContext context, final String seperator) {
+    public FillData(final Path path, final FileContext context, final ApplicationContextSerializer serializer, final String seperator) {
         this.path = path;
         this.context = context;
+        this.serializer = serializer;
         this.seperator = seperator;
     }
 
     public Optional<Boolean> execute() {
         return context.readResource(Path.of(SOURCE_FILE_LOCATION))
-                .flatMap(source -> write(path, source));
+                .flatMap(source -> write(path, source))
+                .flatMap(this::serialize);
     }
 
-    private Optional<Boolean> write(final Path path, final String contents) {
-        return Optional.of(context.write(path, process(contents)));
+    private Optional<Boolean> serialize(final String contents) {
+        serializer.serialize(new ApplicationContext(contents, seperator));
+        return Optional.of(true);
+    }
+
+    private Optional<String> write(final Path path, final String contents) {
+        var processed = process(contents);
+        if (context.write(path, processed))
+            return Optional.of(processed);
+        return Optional.empty();
     }
 
     private String process(final String str) {

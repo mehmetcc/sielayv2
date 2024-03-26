@@ -1,5 +1,6 @@
 package org.mehmetcc.cli;
 
+import org.mehmetcc.context.ApplicationContextSerializer;
 import org.mehmetcc.io.FileContext;
 import org.mehmetcc.middleware.FillData;
 import org.mehmetcc.middleware.MiddlewareConstants;
@@ -17,6 +18,6 @@ public class FillDataCommand implements Runnable {
 
     @Override
     public void run() {
-        new FillData(path, new FileContext(), seperator).execute();
+        new FillData(path, new FileContext(), new ApplicationContextSerializer(), seperator).execute();
     }
 }

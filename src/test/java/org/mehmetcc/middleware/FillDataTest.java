@@ -3,6 +3,7 @@ package org.mehmetcc.middleware;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mehmetcc.context.ApplicationContextSerializer;
 import org.mehmetcc.io.FileContext;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -12,8 +13,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class FillDataTest {
@@ -22,6 +23,9 @@ class FillDataTest {
 
     @Mock
     private FileContext context;
+
+    @Mock
+    private ApplicationContextSerializer serializer;
 
     private String seperator;
 
@@ -33,21 +37,24 @@ class FillDataTest {
     void setup() {
         seperator = ":::";
         sourcePath = Path.of("queen_of_hearts.txt");
-        fillData = new FillData(path, context, seperator);
+        fillData = new FillData(path, context, serializer, seperator);
     }
 
     @Test
     void whenContextIsAbleToReadFromResources_shouldWriteToNewFile() {
         // Data Prep.
         var str = "i\nam\nspeed";
+
         var expected = str.replaceAll("\r", "")
                 .lines()
                 .map(line -> "%s %s".formatted(line, ":::"))
                 .collect(Collectors.joining("\n"));
 
+
         // Stubbing
         when(context.readResource(sourcePath)).thenReturn(str.describeConstable());
         when(context.write(path, expected)).thenReturn(true);
+        doNothing().when(serializer).serialize(any());
 
         // Interaction
         var result = fillData.execute();
@@ -55,6 +62,7 @@ class FillDataTest {
         // Verification
         verify(context).readResource(sourcePath);
         verify(context).write(path, expected);
+        verify(serializer).serialize(any());
 
         // Assertions
         assertThat(result).isNotEmpty().hasValue(true);
@@ -93,6 +101,6 @@ class FillDataTest {
         verify(context).write(path, processed);
 
         // Assertions
-        assertThat(result).isNotEmpty().hasValue(false);
+        assertThat(result).isEmpty();
     }
 }
