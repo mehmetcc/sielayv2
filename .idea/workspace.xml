@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add shadowjar">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" afterDir="false" />
+    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add some basic logging">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,7 +361,21 @@
       <option name="project" value="LOCAL" />
       <updated>1711478174417</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add arity to filldatacommand">
+      <created>1711478224819</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711478224819</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add some basic logging">
+      <created>1711481375714</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711481375714</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -374,14 +389,16 @@
     <MESSAGE value="add 10 lines validation" />
     <MESSAGE value="add dump-db" />
     <MESSAGE value="add shadowjar" />
-    <option name="LAST_COMMIT_MESSAGE" value="add shadowjar" />
+    <MESSAGE value="add arity to filldatacommand" />
+    <MESSAGE value="add some basic logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some basic logging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/DumpDatabase.java</url>
-          <line>57</line>
+          <line>59</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
