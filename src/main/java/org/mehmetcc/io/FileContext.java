@@ -32,7 +32,6 @@ public class FileContext {
         }
     }
 
-
     public Optional<String> read(final Path path) {
         try {
             return Optional.of(Files.readString(path));
