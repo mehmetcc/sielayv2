@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="sielayv2:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add dump-db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/DumpDatabaseCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/DumpDatabaseCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/DumpDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/DumpDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/FillData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/FillData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/FillDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/FillDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +32,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sielayv2" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -68,9 +78,9 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_opened_file_path": "C:/Users/Knuth/Desktop/Projects/sielayv2/src/main",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.14648438",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
@@ -89,7 +99,12 @@
       <recent name="org.mehmetcc.cli" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle shadowJar" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.sielayv2 [shadowJar]">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.mehmetcc.Main" />
       <module name="sielayv2.main" />
@@ -227,9 +242,31 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="sielayv2 [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.DumpDatabaseTest" />
+      <item itemvalue="Gradle.sielayv2 [shadowJar]" />
       <item itemvalue="Gradle.FillDataTest" />
       <item itemvalue="Gradle.FillDataTest.whenContextIsAbleToReadFromResources_shouldWriteToNewFile" />
       <item itemvalue="Gradle.ShredTest" />
@@ -237,6 +274,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.sielayv2 [shadowJar]" />
         <item itemvalue="Gradle.Tests in 'sielayv2.test'" />
         <item itemvalue="Gradle.ShredTest" />
         <item itemvalue="Gradle.FillDataTest" />
@@ -309,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711475487127</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add dump-db">
+      <created>1711477270746</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711477270746</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

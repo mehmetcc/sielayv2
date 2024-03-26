@@ -1,6 +1,8 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
     id 'java'
 }
+
 
 group 'org.mehmetcc'
 version '1.0-SNAPSHOT'
@@ -8,6 +10,15 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.mehmetcc.Main'
+        )
+    }
+}
+
 
 dependencies {
     implementation 'info.picocli:picocli:4.7.5'
