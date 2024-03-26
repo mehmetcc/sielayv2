@@ -1,6 +1,10 @@
 # sielay
 
 ## How to run?
+Get a fat jar:
+```bash
+gradle shadowJar
+```
 Run the fat jar:
 ```bash
 java -jar sielayv2.jar
