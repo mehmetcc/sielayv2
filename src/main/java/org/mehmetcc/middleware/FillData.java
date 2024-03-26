@@ -28,8 +28,18 @@ public class FillData {
 
     public Optional<Boolean> execute() {
         return context.readResource(Path.of(SOURCE_FILE_LOCATION))
+                .flatMap(this::validate)
                 .flatMap(source -> write(path, source))
                 .flatMap(this::serialize);
+    }
+
+    private Optional<String> validate(final String contents) {
+        if (contents.lines().count() < 10) {
+            System.err.println("Input should be at least 10 lines");
+            return Optional.empty();
+        }
+
+        return Optional.of(contents);
     }
 
     private Optional<Boolean> serialize(final String contents) {

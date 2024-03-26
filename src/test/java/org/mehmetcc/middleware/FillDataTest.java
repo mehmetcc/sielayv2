@@ -43,7 +43,7 @@ class FillDataTest {
     @Test
     void whenContextIsAbleToReadFromResources_shouldWriteToNewFile() {
         // Data Prep.
-        var str = "i\nam\nspeed";
+        var str = "i\nam\nspeed\ni\nam\nspeed\ni\nam\nspeed\ni\nam\nspeed";
 
         var expected = str.replaceAll("\r", "")
                 .lines()
@@ -86,8 +86,11 @@ class FillDataTest {
     @Test
     void whenWriteOperationFails_shouldReturnFalse() {
         // Data Prep.
-        var str = "heheeee";
-        var processed = "heheeee :::";
+        var str = "i\nam\nspeed\ni\nam\nspeed\ni\nam\nspeed\ni\nam\nspeed";
+        var processed = str.replaceAll("\r", "")
+                .lines()
+                .map(line -> "%s %s".formatted(line, ":::"))
+                .collect(Collectors.joining("\n"));
 
         // Stubbing
         when(context.readResource(sourcePath)).thenReturn(str.describeConstable());
@@ -99,6 +102,24 @@ class FillDataTest {
         // Verification
         verify(context).readResource(sourcePath);
         verify(context).write(path, processed);
+
+        // Assertions
+        assertThat(result).isEmpty();
+    }
+
+    @Test
+    void whenInputIsLessThen10Lines_shouldReturnEmptyOptional() {
+        // Data Prep.
+        var str = "i\nam\nspeed";
+
+        // Stubbing
+        when(context.readResource(sourcePath)).thenReturn(str.describeConstable());
+
+        // Interaction
+        var result = fillData.execute();
+
+        // Verification
+        verify(context).readResource(sourcePath);
 
         // Assertions
         assertThat(result).isEmpty();
