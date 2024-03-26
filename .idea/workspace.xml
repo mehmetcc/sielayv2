@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add database context">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextSerializer.java" afterDir="false" />
+    <list default="true" id="00b93815-b8c0-4c4f-88d7-91e919f7f165" name="Changes" comment="add 10 lines validation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/DumpDatabaseCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/DumpDatabaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/FillDataCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/FillData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/FillData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/FillDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/mehmetcc/middleware/FillDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/RootCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/cli/RootCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/context/ApplicationContextDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/DumpDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/DumpDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +39,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Record" />
       </list>
     </option>
   </component>
@@ -83,6 +82,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.mehmetcc.middleware" />
       <recent name="org.mehmetcc.context" />
       <recent name="org.mehmetcc.io" />
       <recent name="org.mehmetcc.command" />
@@ -93,7 +93,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.mehmetcc.Main" />
       <module name="sielayv2.main" />
-      <option name="PROGRAM_PARAMETERS" value="fill-data ananas -S ;" />
+      <option name="PROGRAM_PARAMETERS" value="dump-db dump-db -S :::" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.mehmetcc.*" />
@@ -114,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatabaseContextTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DumpDatabaseTest.whenInvalidPathGiven_shouldReturnEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -127,7 +127,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.io.DatabaseContextTest&quot;" />
+            <option value="&quot;org.mehmetcc.middleware.DumpDatabaseTest.whenInvalidPathGiven_shouldReturnEmpty&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -137,7 +137,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FillDataTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DumpDatabaseTest.whenNoPathGivenAndApplicationContextCantBeFound_shouldReturnEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,7 +150,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.middleware.FillDataTest&quot;" />
+            <option value="&quot;org.mehmetcc.middleware.DumpDatabaseTest.whenNoPathGivenAndApplicationContextCantBeFound_shouldReturnEmpty&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,7 +160,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FillDataTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DumpDatabaseTest.whenNoPathGiven_shouldDeserializeFromApplicationContextDeserializerWriteToDatabase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +173,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.command.FillDataTest&quot;" />
+            <option value="&quot;org.mehmetcc.middleware.DumpDatabaseTest.whenNoPathGiven_shouldDeserializeFromApplicationContextDeserializerWriteToDatabase&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,7 +183,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="FillDataTest.whenWriteOperationFails_shouldReturnFalse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DumpDatabaseTest.whenValidPathGivenFileCantBeRead_shouldReturnEmpty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -196,7 +196,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.mehmetcc.middleware.FillDataTest.whenWriteOperationFails_shouldReturnFalse&quot;" />
+            <option value="&quot;org.mehmetcc.middleware.DumpDatabaseTest.whenValidPathGivenFileCantBeRead_shouldReturnEmpty&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,7 +206,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'sielayv2.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DumpDatabaseTest.whenValidPathGiven_shouldWriteDatabaseAndReturnTrue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -218,6 +218,8 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.mehmetcc.middleware.DumpDatabaseTest.whenValidPathGiven_shouldWriteDatabaseAndReturnTrue&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -229,19 +231,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.DatabaseContextTest" />
-      <item itemvalue="Gradle.FillDataTest.whenWriteOperationFails_shouldReturnFalse" />
-      <item itemvalue="Gradle.FillDataTest" />
-      <item itemvalue="Gradle.FillDataTest (1)" />
-      <item itemvalue="Gradle.Tests in 'sielayv2.test'" />
+      <item itemvalue="Gradle.DumpDatabaseTest.whenInvalidPathGiven_shouldReturnEmpty" />
+      <item itemvalue="Gradle.DumpDatabaseTest.whenNoPathGivenAndApplicationContextCantBeFound_shouldReturnEmpty" />
+      <item itemvalue="Gradle.DumpDatabaseTest.whenNoPathGiven_shouldDeserializeFromApplicationContextDeserializerWriteToDatabase" />
+      <item itemvalue="Gradle.DumpDatabaseTest.whenValidPathGivenFileCantBeRead_shouldReturnEmpty" />
+      <item itemvalue="Gradle.DumpDatabaseTest.whenValidPathGiven_shouldWriteDatabaseAndReturnTrue" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FillDataTest (1)" />
-        <item itemvalue="Gradle.FillDataTest.whenWriteOperationFails_shouldReturnFalse" />
-        <item itemvalue="Gradle.DatabaseContextTest" />
-        <item itemvalue="Gradle.Tests in 'sielayv2.test'" />
-        <item itemvalue="Gradle.FillDataTest" />
+        <item itemvalue="Gradle.DumpDatabaseTest.whenValidPathGivenFileCantBeRead_shouldReturnEmpty" />
+        <item itemvalue="Gradle.DumpDatabaseTest.whenInvalidPathGiven_shouldReturnEmpty" />
+        <item itemvalue="Gradle.DumpDatabaseTest.whenValidPathGiven_shouldWriteDatabaseAndReturnTrue" />
+        <item itemvalue="Gradle.DumpDatabaseTest.whenNoPathGivenAndApplicationContextCantBeFound_shouldReturnEmpty" />
+        <item itemvalue="Gradle.DumpDatabaseTest.whenNoPathGiven_shouldDeserializeFromApplicationContextDeserializerWriteToDatabase" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +284,28 @@
       <option name="project" value="LOCAL" />
       <updated>1711467708457</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add application context">
+      <created>1711470269895</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711470269895</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix grammar">
+      <created>1711473189047</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711473189047</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add 10 lines validation">
+      <created>1711473448544</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711473448544</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -290,7 +313,22 @@
     <MESSAGE value="Formatting" />
     <MESSAGE value="add fill-data" />
     <MESSAGE value="add database context" />
-    <option name="LAST_COMMIT_MESSAGE" value="add database context" />
+    <MESSAGE value="add application context" />
+    <MESSAGE value="add line validation for fill-data" />
+    <MESSAGE value="fix grammar" />
+    <MESSAGE value="add 10 lines validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 10 lines validation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mehmetcc/middleware/FillData.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sielayv2$Tests_in__sielayv2_test_.ic" NAME="Tests in 'sielayv2.test' Coverage Results" MODIFIED="1711466684203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
