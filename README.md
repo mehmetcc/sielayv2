@@ -16,7 +16,7 @@ java -jar sielayv2.jar --help
 There are 3 commands as specified in the pdf. I took the liberty of adding a flag -S or --seperator so that the user can specify desired seperator.
 The flag is optional and hence can be omitted as well. Default seperator value is :::.
 ```bash
-java -jar sielayv2.jar fill-data my/beautiful/dark/path -S ;
+java -jar sielayv2.jar fill-data my/beautiful/dark/twisted/path -S ;
 ```
 There are known limitations with the seperator though. this project utilizes picocli, which uses a regex based parser and hence inputs such as "?" can't be used since it is a reserved keyword for the regular expression engine. in such cases, pico will raise a failure message.
 
