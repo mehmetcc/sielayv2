@@ -10,7 +10,7 @@ import java.util.Optional;
 public class ApplicationContextDeserializer {
     private static final String DESERIALIZATION_FAILURE = "Error while deserializing ApplicationContext.";
 
-    private static final String NO_APPLICATION_STATE_EXISTS = "No ApplicationState exists.";
+    private static final String NO_APPLICATION_CONTEXT_EXISTS = "No ApplicationContext exists. You should run fill-data first.";
 
     public Optional<ApplicationContext> deserialize() {
         var path = Path.of(ApplicationContextConstants.APPLICATION_CONTEXT_LOCATION);
@@ -20,7 +20,7 @@ public class ApplicationContextDeserializer {
     private Optional<Path> check(final Path path) {
         if (Files.exists(path)) return Optional.of(path);
         else {
-            System.err.println(NO_APPLICATION_STATE_EXISTS);
+            System.err.println(NO_APPLICATION_CONTEXT_EXISTS);
             return Optional.empty();
         }
     }
