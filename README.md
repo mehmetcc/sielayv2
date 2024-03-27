@@ -81,7 +81,13 @@ Unfortunately there are several cases where I could've propagated the failure me
 alas it would've been such a pain to do that with only Option Monad's and would require some side-effecty code. Either Type would have
 done wonders but no good Java implementation is available afaik (there is vavr, but vavr is a terrible library).
 
-But I did not use any System.exit()'s or any flow-breaking goto like spaghetti code crunching statements.
+But I did not use any System.exit()'s (as can be seen in other CLI tools) or any flow-breaking goto like spaghetti code crunching statements.
+
+### Some Additional Design Choices
+* I did not use any logging library, since this program runs on a single thread so System.out and System.in can be safely used.
+* There is only a single instance of using _null_, and that is because I could not find any other meaningful way to intercept
+if dump-db command has a path parameter or not.
+
 
 ### Alternative Test Cases
 One Design Pattern I adore while writing Java code is the Façade Pattern. This pattern turns every single package into a stand-alone
