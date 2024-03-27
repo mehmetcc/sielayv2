@@ -24,6 +24,7 @@ dependencies {
     implementation 'info.picocli:picocli:4.7.5'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
     implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.45.2.0'
+    implementation group: 'org.slf4j', name: 'slf4j-nop', version: '2.0.12'
 
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.11.0'
     testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '5.11.0'
